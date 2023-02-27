@@ -59,6 +59,151 @@
             <li>brew 설치</li>
         </ol>
         <pre><code><code><div>xcode-select --install</div></code></code></pre>
+        <pre><code><code><div>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</div></code></pre>
+        <ol start="2">
+            <li>wget설치</li>
+        </ol> 
+        <pre><code><code><div>brew install wget</div></code></pre>
+        <ol start="3">
+            <li>nvm 설치</li>
+        </ol>
+        <pre><code><code><div>wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</div></code></pre>
+        <ol start="4">
+            <li>명령어로 설치</li>
+        </ol>
+        <pre><code><code><div>nvm install 16.17.0</div></code></pre>
+        <p><code>node -v</code> 로 설치 확인</p>
+        <p>helloNode.js 파일 생성 후 node.js로 실행시키기</p>
+        <pre><code class="language-js"><div><span class="hljs-comment">//helloNode.js</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello, Node!`</span>)</div></code></pre>
+        <hr>
+        <ul>
+            <li>
+                <h3 id="자료형--data-types-">자료형 (Data Types )</h3>
+        <ul>
+            <li>number : 숫자 ( 1, 2, 3, 0.1, 0.2, -1, -2)</li>
+            <li>string : 문자열 ('hello', 'ggomagang', 'a', 'b')
+        <ul>
+            <li>*스트링 형식의 값을 나타낼 때에는 따옴표를 붙여줘야 한다.</li>
+        </ul>
+        </li> 
+        <li>boolean : 참 or 거짓 (true,1,false,0)</li>
+        <li>null : 아무 값도 아님</li>
+        <li>undefined : 아무것도 없음</li>
+        <li>NaN : 숫자가 아님</li>
+        </ul>
+            </li>
+        </ul>
+    <pre><code class="language-js"><div><span class="hljs-keyword">typeof</span>()<span class="hljs-comment"> // ()안에 숫자나 문자, code 등을 넣으면 괄호 안의 형태(0, NaN, Undefined 등)을 내놓는다.</span></div></code></pre>    
+    <img src="https://images.velog.io/images/tpgus758/post/9a0b1ed0-3888-4541-9617-514a38772093/a.png" width="400">
+    <hr>
+    <ul>
+        <li>
+            <h2 id="변수--variable-">변수 ( Variable )</h2>
+        </li>
+    </ul>
+    <p><b><code>변수</code></b> : 값을 담는 공간</p>
+    <p>변수는 어떤 값을 담을 수 있는 상자라고 생각하면 된다.<br><img src="https://cdn.discordapp.com/attachments/1013490661858738209/1022837088510550096/unknown.png" width=300></p>
+    <p><b>변수의 종류</b><br>
+        const : 변수의 값을 변경할 수 없음 (진공포장까지 완료한 박스)<br>
+        let : 변수의 값을 변경할 수 있음 (아직 포장하지 않은 박스)</p>
+    <p><b>변수 선언 방법</b></p>
+    <pre><code class="language-js">
+    <div>
+    <span class="hljs-keyword">const</span> 변수이름;
+    <span class="hljs-keyword">const</span> 변수이름 = 값;
+    <span class="hljs-keyword">let</span> 변수이름;
+    <span class='hljs-keyword'>let</span> 변수이름 = 값;
+
+    사용 예시
+    <span class="hljs-keyword">const</span> naTreeum = <span class="hljs-string">&#x27;Handsome&#x27;</span>;
+    <span class="hljs-keyword">let</span> age = <span class="hljs-number">10</span>;
+    </span></div></code></pre>
+    <p><b>변수이름 설정 시 주의사항</b><br>
+    : 숫자로 시작할 수 없다<br>
+    : 띄어쓰기 할 수 없다</p>
+    <hr>
+    <ul>
+        <li>
+            <h2 id="배열--array-">배열 ( Array )</h2>
+        </li>
+    </ul>
+    <p><b><code>배열</code></b>
+    : 여러 개의 값을 담는 공간</p>
+    <p>배열도 변수와 마찬가지로 값을 담을 수 있는 박스이지만, 여러 개의 값을 넣을 수 있는 박스라고 생각한다.<br>
+    또한, 배열박스 안의 값을 넣을 경우, 네임택을 꼭 붙여야 하고 네임택은 0부터 시작되는 숫자(number)이다.<br>
+    <blockquote></blockquote>
+    *참고로 네임택은 인덱스(Index)라고 부르며, 아래의 사진과 같은 형식이다.</p>
+    <img src="https://cdn.discordapp.com/attachments/1013490661858738209/1022851372409966682/unknown.png" width="300">
+    <p><b>배열 사용법</b></p>
+    <pre><code class="language-js"><div>선언;
+<span class="hljs-keyword">let</span> eArr = []; <span class="hljs-comment">// 빈 배열</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span><span class="hljs-number">3</span>];<span class="hljs-comment"> // 칸이 3개인 배열</span>
+    </div></code></pre>
+    <p>arr[0]은 1이다<br>
+    arr[1]은 2이다<br>
+    arr[2]는 3이다
+    </p>
+    <p><b>Q. [1,3,5,10,30,50,100,300,500] 값을 이용해 이름이 numbers인 배열을 선언하고, 50을 출력하는 코드를 작성하시오</b></p>
+    <pre><code class="language-js"><div><span class="hljs-keyword">const</span> ____ = __________;
+<span class="hljs-built_in">console</span>.log(_____);
+    </div></code></pre>
+    <hr>
+    <ul>
+        <li>
+            <h2 id="함수--function-">함수 ( Function )</h2>
+            <code>함수</code> : 특정 기능을 수행하는 코드 조각
+        </li>
+    </ul>
+    <p>함수의 기본형</p>
+    <pre><code class="hljs-function"><div><span class="hljs-keyword">function</span> (<span class="hljs-params">parameter</span>)  {
+
+    <span class="hljs-keyword">return</span>;
+}
+        </div></code></pre>
+    <p>고기분쇄기로 고기를 갈고 있다고 생각하자.<br>
+    먼저 고기분쇄기에 고기를 넣으면 고기가 갈린다.<br>
+    소고기는 갈린 소고기로, 돼지고기는 갈린 돼지고기로, 닭고기는 갈린 닭고기로 나온다.<br>
+    </p>
+    <br/>
+    <p>이 구조에서 &quot;고기분쇄기&quot;는 &quot;함수 이름&quot;에 해당한다.<br>
+    소고기, 돼지고기, 닭고기는 모두 &quot;입력값&quot;에 해당한다.<br>
+    갈린 소고기, 갈린 돼지고기, 갈린 닭고기는 모두 &quot;반환값&quot;에 해당한다.
+    </p>
+    <pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> 고기분쇄기(<span class="hljs-params">접시</span>) </span> { 
+<span class="hljs-comment">//고기분쇄기라는 함수를 만들면, 접시에 올려진 고기를 갈기 시작한다</span> 
+    고기를 간다(접시); <span class="hljs-comment"> //고기가 갈린다</span>
+    <span class="hljs-keyword">return</span> 갈린고기; <span class="hljs-comment">갈린 고기를 반환한다</span>
+}
+
+고기분쇄기(소고기); <span class="hljs-comment">//접시에 소고기를 올려서 고기분쇄기를 작동시킨다. 아래의 나머지도 각각 돼지고기, 닭고기를 넣고 작동시킨다.</span>
+고기분쇄기(돼지고기);
+고기분쇄기(닭고기);
+    </div></code></pre>
+    <p>만들어진 함수를 사용하는 방법은 함수 이름(입력값)으로 사용한다.</p>
+    <pre><code class="language-js"><div><span class="hljs-keyword">const</span> num1 = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">const</span> num2 = <span class="hljs-number">20</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mul</span>(<span class="hljs-params">a,b</span>) </span>{
+    <span class="hljs-keyword">return</span> a * b;
+}
+
+mul(num1, num2);
+</div></code></pre>
+<p>Q. 두 개의 값을 입력받아 첫 번째로 입력받은 수를 출력하고, 두 번째로 입력받은 수를 리턴하는 함수를 작성하시오.</p>
+<pre><code class="language-js"><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params">____</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(___);
+    <span class="hljs-keyword">return</span> ____;
+}
+    </div></code></pre>
+
+<p>Q. 세 개의 값을 입력받아 첫 번째로 입력받은 수와 두 번째로 입력받은 수를 더한 값과 두 번째로 입력받은 수에서 세 번째로 입력받은 수를 뺀 값을 차이를 반환하는 함수를 작성하시오.</p>
+<pre><code class="language-js"><div>____ <span class="hljs-function"><span class="hljs-title">func</span>(<span class="hljs-params">____</span>)</span> {
+    <span class="hljs-keyword">let</span> val1 = ___;
+    <span class="hljs-keyword">let</span> val2 = ___;
+    <span class="hljs-keyword">let</span> result = ___;
+    ___ ___;
+}
+    </div></code></pre>
     </body>
 </head>
     <script src="Zeeto.js"></script>

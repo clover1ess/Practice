@@ -1,19 +1,46 @@
 blockquote {
     margin: 0 7px 0 5px;
     padding: 0 16px 0 10px;
-    font-size: 50px;
+}
+pre:not(.hljs), pre.hljs code > div {
+    padding: 16px;
+    border-radius: 3px;
+    overflow: auto;
+}
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+}
+.vscode-light pre {
+    background-color: rgba(220, 220, 220, 0.4);
+}
+pre code {
+    color: var(--vscode-editor-foreground);
+    tab-size: 4;
 }
 
-p {
-    margin-left: 30px;
-    font-size: 30px;
+code {
+    font-family: var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);
+    font-size: 1em;
+    line-height: 1.357em;
 }
-ul {
-    font-size: 25px;
+.vscode-light .hljs-comment, .hljs-number  {
+    color:#008000;
 }
-h1 {
-    font-size: 60px;
+.vscode-light .hljs-built_in {
+    color:#007ACC;
 }
-h2 {
-    font-size: 40px;
+.vscode-light .hljs-string {
+    color:#A31515;
+}
+.vscode-light .hljs-keyword {
+    color:#0000f0;
+}
+.vscode-light .hljs-comment {
+    font-style:italic;
+}
+.vscode-light .hljs-title {
+    color:#808080;
 }
